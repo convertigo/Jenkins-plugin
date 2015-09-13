@@ -1,0 +1,46 @@
+<?jelly escape-by-default='true'?>
+<j:jelly 	xmlns:j="jelly:core" 
+			xmlns:f="/lib/form"
+			xmlns:st="jelly:stapler"
+			xmlns:d="jelly:define"
+			xmlns:l="/lib/layout"
+			xmlns:t="/lib/hudson">
+
+	<f:entry 	field="projectname" 
+				title="project" 
+				description="${%TestCaseBlock.select.projectname.description}" with = "url,userId,password">
+			<f:select/>
+	</f:entry>
+	  
+	<f:entry 	field="testcasename" 
+				title="testcase"
+	       		description="${%TestCaseBlock.select.testcasename.description}" 
+	       		with = "url,userId,password">  		
+			<f:select/>
+	</f:entry> 
+
+	<f:validateButton
+		   title="${%TestCaseBlock.validatebutton.executetestcase.title}" 
+		   progress="${%Testing...}"
+		   method="validateTestCase" 
+		   with="projectname,testcasename,xpath" />
+
+	
+	<f:entry 	title="Assertions" 
+				field="xpath">
+			<f:textarea  default="assert ok \n//node[text() = 'value']"/>			
+	</f:entry>
+	
+	<f:validateButton
+		   title="${%TestCaseBlock.validatebutton.validatexpath.title}" 
+		   progress="${%Evaluating...}"
+		   method="evaluateXpath" 
+		   with="projectname,testcasename,xpath" />
+
+	<f:entry title=""> 
+		<div align="right"> 
+			<f:repeatableDeleteButton /> 
+		</div> 	
+	</f:entry>
+
+</j:jelly>

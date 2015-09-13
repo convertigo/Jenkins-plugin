@@ -1,0 +1,8 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+    <f:section title="TestCaseBlock" field="testcaseblock">
+        <f:block >
+            <f:repeatableHeteroProperty field="testcaseblock" hasHeader="true"/>
+        </f:block>
+    </f:section>
+</j:jelly>

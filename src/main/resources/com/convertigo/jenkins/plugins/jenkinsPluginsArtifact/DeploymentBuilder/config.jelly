@@ -1,0 +1,44 @@
+<?jelly escape-by-default='true'?>
+<j:jelly 
+	xmlns:j="jelly:core" 
+	xmlns:st="jelly:stapler" 
+	xmlns:d="jelly:define" 
+	xmlns:l="/lib/layout" 
+	xmlns:t="/lib/hudson" 
+	xmlns:f="/lib/form">
+
+
+
+	<f:entry title="${%Admin.url.entry.title}" field = "url">
+ 		<f:textbox field="url" />
+	</f:entry>
+	
+ 	<f:entry title="${%Admin.userId.entry.title}" field= "userId">
+		<f:textbox field="userId" />
+	</f:entry>
+	<f:entry title="${%Admin.password.entry.title}" field="password">
+		<f:password field="password" />
+	</f:entry>
+
+	<f:section title="Auto-deployment module">
+		<f:entry field = "enableZipFile">
+	    	<f:checkbox  title="${%Deployment.EnableZip.checkbox.title}" default ="false"/>
+	    </f:entry>
+	    <f:entry field = "enableAutoDeploy">	
+			<f:checkbox  title="${%Deployment.EnableAutoDeploy.checkbox.title}"  default="false"/>
+		</f:entry>
+	</f:section >	
+
+    <f:optionalBlock field="enableTestCase"
+    				 name="${%TestCase.EnableTestCase.optionalBlock.name}" 
+    				 title="${%TestCase.EnableTestCase.optionalBlock.title}">
+    				 
+		<f:section title="${%TestCase.EnableTestCase.optionalBlock.section.title}">
+			<f:entry title="${%TestCase.EnableTestCase.optionalBlock.repeatableProperty.title}" > 
+		        <f:repeatableProperty field="testcaseblock" add="${%Add Test Case}" with="url,userId,password"/>  
+		    </f:entry>
+		</f:section >	
+		
+    </f:optionalBlock>	
+	
+</j:jelly>
