@@ -11,11 +11,11 @@
     <relativePath/>
   </parent>
   <groupId>com.convertigo.jenkins.plugins</groupId>
-  <artifactId>ConvertigoPluginsArtifact</artifactId>
+  <artifactId>convertigo-plugin</artifactId>
   <version>1.0</version>
   <packaging>hpi</packaging>
 
-  <name>Convertigo Jenkins Plugin</name>
+  <name>Convertigo Plugin</name>
   <description>Build, deploy and test Convertigo projects in a Continuous integration environment</description>
   <url>https://wiki.jenkins-ci.org/display/JENKINS/ConvertigoPlugin</url>
   <licenses>
