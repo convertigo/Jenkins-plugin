@@ -94,8 +94,6 @@ public class ZipFile {
 	/**
 	 * Zip zipProject
 	 * 
-	 * @param zipFile
-	 *            output ZIP file location
 	 */
 
 	public void zipProject(List<Path> filePathList, Path projectPath,
